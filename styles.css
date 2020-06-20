@@ -6,8 +6,15 @@ html {
   font-family: "Lato";
   src: url("assets/fonts/Lato-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Lato Bold";
+  src: url("assets/fonts/Lato-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato Black";
+  src: url("assets/fonts/Lato-Black.ttf") format("truetype");
+}
 body {
-  max-width: 1020px;
   margin: auto;
   font-size: 1.6 rem;
   font-family: "Lato", Verdana, sans-serif;
@@ -17,21 +24,8 @@ body {
   color: #f06c64;
 }
 
-p {
+p, h1, h2, h4 {
   margin: 0 0;
-}
-
-h1, h2, h4 {
-  margin: 0 0;
-}
-
-h1 {
-  font-size: 25px;
-  line-height: 6px;
-  color: #ffffff;
-  font-family: "Lato";
-  font-weight: 700;
-  text-align: left;
 }
 
 h2 {
@@ -66,30 +60,39 @@ h4 {
   margin: auto;
 }
 
+@media (max-width: 769px) {
+  .wrapper {
+    max-width: 688px;
+    margin: auto;
+  }
+}
+@media (max-width: 376px) {
+  .wrapper {
+    max-width: 314px;
+    margin: auto;
+  }
+}
 header {
   background-color: #2d303a;
-  box-shadow: 0px 6px 0px 0px #323746;
 }
 
-.header_wrapper {
+.header_content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo_text {
-  padding: 35px 0px;
+  font-size: 2.5rem;
+  color: #fff;
+  padding: 32px 0px;
 }
 
 .navigation {
   display: flex;
   font-size: 1.2rem;
-  line-height: 6px;
   color: #fff;
-  font-family: "Lato";
-  font-weight: 700;
-  text-align: left;
-  margin: 0 0;
+  font-family: "Lato Bold";
 }
 
 .navigation__link {
@@ -107,6 +110,42 @@ header {
   list-style: none;
 }
 
+.menu_logo {
+  display: none;
+}
+
+@media (max-width: 376px) {
+  .header__navigation {
+    display: none;
+  }
+
+  .logo_container {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu_logo {
+    display: block;
+    margin-left: 15px;
+  }
+
+  .logo_text {
+    flex-basis: 65%;
+  }
+
+  .menu_dash {
+    height: 2.4px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  .menu_logo > .menu_dash + .menu_dash {
+    margin-top: 5px;
+  }
+}
 .slider {
   background-color: #f06c64;
 }
@@ -130,6 +169,38 @@ header {
   cursor: pointer;
 }
 
+@media (max-width: 769px) {
+  .shevron {
+    width: 16px;
+    height: 28px;
+  }
+
+  .phone_vert {
+    width: 180px;
+    height: 364px;
+  }
+
+  .phone_horiz {
+    width: 364px;
+    height: 180px;
+  }
+}
+@media (max-width: 376px) {
+  .shevron {
+    width: 14px;
+    height: 24px;
+  }
+
+  .phone_vert {
+    width: 88px;
+    height: 177px;
+  }
+
+  .phone_horiz {
+    width: 177px;
+    height: 88px;
+  }
+}
 .our_services {
   background-color: #f2f2f2;
 }
@@ -160,6 +231,16 @@ header {
   flex: 1 0 30%;
 }
 
+@media (max-width: 769px) {
+  .our_service_item {
+    flex: 1 0 50%;
+  }
+}
+@media (max-width: 376px) {
+  .our_service_item {
+    flex: 1 0 100%;
+  }
+}
 .our_service_info_img {
   margin-right: 20px;
 }
@@ -249,6 +330,33 @@ header {
   padding-bottom: 65px;
 }
 
+@media (max-width: 769px) {
+  .layout-4-column {
+    display: flex;
+    flex-basis: 33%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 65px;
+  }
+}
+@media (max-width: 376px) {
+  .layout-4-column {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 65px;
+  }
+
+  .layout-4-column > img:nth-child(n+9) {
+    display: none;
+  }
+
+  .portfolio_img {
+    padding-top: 15px;
+    width: 48%;
+  }
+}
 .portfolio_img {
   padding-top: 15px;
 }
@@ -292,6 +400,28 @@ header {
   flex-basis: 1;
 }
 
+@media (max-width: 769px) {
+  .profile > img {
+    width: 219px;
+  }
+}
+@media (max-width: 376px) {
+  .layout_about_us {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 65px;
+    flex-wrap: wrap;
+  }
+
+  .profile {
+    flex-basis: 1;
+    padding-bottom: 20px;
+  }
+
+  .profile > img {
+    width: 100%;
+  }
+}
 .profile_name {
   font-size: 18px;
   line-height: 18px;
@@ -353,6 +483,21 @@ header {
   flex-basis: 34%;
 }
 
+@media (max-width: 376px) {
+  .contact_form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .quote_form_container {
+    flex-basis: 100%;
+    padding-bottom: 50px;
+  }
+
+  .contact_info {
+    flex-basis: 100%;
+  }
+}
 .quote_form {
   display: flex;
   flex-direction: column;
